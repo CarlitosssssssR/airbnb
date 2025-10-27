@@ -15,14 +15,22 @@
 * {
   box-sizing: border-box;
 }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-body);
   margin: 0;
+  padding: 0;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  width: 100%;
 }
 .hero {
   background: linear-gradient(180deg, #6BA3A2, var(--bg));
@@ -586,3 +594,585 @@ body {
         opacity: 0;
         z-index: 1;
     }
+
+/* ========================================
+   RESPONSIVE DESIGN - SOLO MÓVILES
+   NO AFECTA LA VISTA DE ESCRITORIO
+   ======================================== */
+
+/* Tablets y dispositivos medianos (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+    /* Eliminar scroll horizontal */
+    html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    body {
+        position: relative;
+    }
+
+    /* Hero section */
+    .hero {
+        min-height: 75vh;
+        padding: 60px 16px 30px;
+        overflow: hidden;
+    }
+
+    .hero-inner {
+        max-width: 100%;
+        padding: 0 8px;
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 8vw, 48px);
+        margin: 0 0 20px;
+    }
+
+    .subtitle {
+        font-size: clamp(16px, 3.5vw, 18px);
+        padding: 0 12px;
+        margin-bottom: 25px;
+    }
+
+    .btn {
+        padding: 14px 28px;
+        font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        padding: 0 16px;
+        margin-top: -80px;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    /* CARRUSEL PRINCIPAL - Solo mostrar photo1 */
+    .carousel-background {
+        height: 280px;
+        margin: 30px auto;
+        max-width: calc(100vw - 24px);
+        padding: 0;
+    }
+
+    .carousel-container-3d {
+        height: 350px;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    /* Ocultar TODOS los slides */
+    .slide,
+    .slide-left,
+    .slide-right,
+    .slide-hidden,
+    .slide-center {
+        display: none !important;
+    }
+
+    /* Mostrar SOLO el primer slide (photo1) */
+    .slide:first-child {
+        display: block !important;
+        position: absolute;
+        width: 85%;
+        height: 80%;
+        left: 7.5%;
+        top: 10%;
+        transform: translate(0) scale(1) !important;
+        opacity: 1 !important;
+        z-index: 1;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Features grid */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 30px;
+    }
+
+    .feature-item {
+        padding: 24px 20px;
+    }
+
+    .feature-item h3 {
+        font-size: 19px;
+        margin-bottom: 8px;
+    }
+
+    .feature-item p {
+        font-size: 15px;
+    }
+
+    /* Price tag */
+    .price-tag {
+        padding: 22px 30px;
+        margin: 25px 0;
+    }
+
+    .price-tag .amount {
+        font-size: 26px;
+    }
+
+    /* GALERÍA - Imágenes más pequeñas */
+    .gallery-section {
+        padding: 20px 16px 35px;
+        overflow: hidden;
+        max-width: 100%;
+        margin: 10px 0 25px;
+    }
+
+    .gallery-section h2 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .gallery-section > p {
+        font-size: 15px;
+        padding: 0 8px;
+        margin-bottom: 20px;
+    }
+
+    .gallery-carousel {
+        max-width: 100%;
+        overflow: hidden;
+        padding: 15px 0;
+    }
+
+    .gallery-container {
+        margin: 0 12px;
+        max-width: calc(100vw - 24px);
+        overflow: hidden;
+    }
+
+    .gallery-slide {
+        flex: 0 0 calc(50% - 8px) !important;
+        height: 200px !important;
+        min-width: 0;
+    }
+
+    .gallery-track {
+        gap: 12px;
+    }
+
+    .gallery-nav {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-nav.prev {
+        left: 8px;
+    }
+
+    .gallery-nav.next {
+        right: 8px;
+    }
+
+    /* Amenidades */
+    .amenities {
+        padding: 35px 0;
+        margin: 25px 0;
+    }
+
+    .amenities h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .amenities-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0 16px;
+    }
+
+    .amenity-card {
+        padding: 22px 18px;
+    }
+
+    .amenity-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .amenity-card p {
+        font-size: 14px;
+    }
+
+    /* Booking */
+    .booking {
+        margin: 35px 0;
+        padding: 0 16px;
+    }
+
+    .booking-card {
+        padding: 30px 22px;
+    }
+
+    .booking-card h2 {
+        font-size: 26px;
+        margin-bottom: 12px;
+    }
+
+    .booking-subtitle {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .booking-highlight {
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .booking-btn {
+        padding: 14px 26px;
+        font-size: 15px;
+        margin-top: 15px;
+    }
+
+    /* Lightbox */
+    .lb-close,
+    .lb-prev,
+    .lb-next {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .lb-close {
+        top: 12px;
+        right: 12px;
+    }
+
+    .lb-prev {
+        left: 12px;
+    }
+
+    .lb-next {
+        right: 12px;
+    }
+}
+
+/* Móviles pequeños (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+        position: relative;
+    }
+
+    /* Hero más compacto */
+    .hero {
+        min-height: 65vh;
+        padding: 50px 12px 25px;
+    }
+
+    .hero-inner {
+        padding: 0 4px;
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 7vw, 40px);
+        margin: 0 0 18px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 0 8px;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        padding: 13px 26px;
+        font-size: 14px;
+        margin-bottom: 75px;
+    }
+
+    .container {
+        padding: 0 12px;
+        margin-top: -70px;
+    }
+
+    /* CARRUSEL PRINCIPAL - Solo photo1, más pequeño */
+    .carousel-background {
+        height: 250px;
+        margin: 25px auto;
+        max-width: calc(100vw - 20px);
+    }
+
+    .carousel-container-3d {
+        height: 320px;
+    }
+
+    .slide:first-child {
+        width: 88%;
+        height: 78%;
+        left: 6%;
+        top: 11%;
+    }
+
+    /* Features */
+    .features-grid {
+        gap: 16px;
+        margin-top: 25px;
+    }
+
+    .feature-item {
+        padding: 20px 16px;
+    }
+
+    .feature-item h3 {
+        font-size: 17px;
+    }
+
+    .feature-item p {
+        font-size: 14px;
+    }
+
+    .price-tag {
+        padding: 20px 26px;
+        margin: 20px 0;
+    }
+
+    .price-tag .amount {
+        font-size: 24px;
+    }
+
+    /* GALERÍA - Más pequeña */
+    .gallery-section {
+        padding: 15px 12px 30px;
+        margin: 8px 0 20px;
+    }
+
+    .gallery-section h2 {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .gallery-section > p {
+        font-size: 14px;
+        padding: 0 6px;
+    }
+
+    .gallery-carousel {
+        max-width: 100%;
+        overflow: hidden;
+        padding: 12px 0;
+    }
+
+    .gallery-container {
+        margin: 0 10px;
+        max-width: calc(100vw - 20px);
+        overflow: hidden;
+    }
+
+    .gallery-slide {
+        flex: 0 0 100% !important;
+        height: 260px !important;
+        min-width: 0;
+    }
+
+    .gallery-track {
+        gap: 0;
+    }
+
+    .gallery-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .gallery-nav.prev {
+        left: 8px;
+    }
+
+    .gallery-nav.next {
+        right: 8px;
+    }
+
+    /* Amenidades */
+    .amenities {
+        padding: 30px 0;
+        margin: 20px 0;
+    }
+
+    .amenities h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .amenities-grid {
+        gap: 16px;
+        padding: 0 12px;
+    }
+
+    .amenity-card {
+        padding: 20px 16px;
+    }
+
+    .amenity-card h3 {
+        font-size: 17px;
+    }
+
+    .amenity-card p {
+        font-size: 13px;
+    }
+
+    /* Booking */
+    .booking {
+        margin: 30px 0;
+        padding: 0 12px;
+    }
+
+    .booking-card {
+        padding: 26px 18px;
+    }
+
+    .booking-card h2 {
+        font-size: 24px;
+    }
+
+    .booking-subtitle {
+        font-size: 14px;
+    }
+
+    .booking-highlight {
+        padding: 18px;
+        margin: 18px 0;
+    }
+
+    .booking-btn {
+        padding: 13px 22px;
+        font-size: 14px;
+    }
+
+    /* Lightbox */
+    .lb-close,
+    .lb-prev,
+    .lb-next {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .lb-close {
+        top: 10px;
+        right: 10px;
+    }
+
+    .lb-prev {
+        left: 10px;
+    }
+
+    .lb-next {
+        right: 10px;
+    }
+}
+        left: 3px;
+    }
+
+    .gallery-nav.next {
+        right: 3px;
+    }
+
+    /* Amenidades */
+    .amenity-card {
+        padding: 18px;
+    }
+
+    .amenity-card h3 {
+        font-size: 16px;
+    }
+
+    .amenity-card p {
+        font-size: 13px;
+    }
+
+    /* Booking */
+    .booking-card {
+        padding: 24px 18px;
+    }
+
+    .booking-card h2 {
+        font-size: 22px;
+    }
+
+    .booking-subtitle {
+        font-size: 14px;
+    }
+
+    .booking-btn {
+        padding: 13px 20px;
+        font-size: 14px;
+    }
+
+    /* Lightbox */
+    .lb-close,
+    .lb-prev,
+    .lb-next {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .lb-close {
+        top: 10px;
+        right: 10px;
+    }
+
+    .lb-prev {
+        left: 10px;
+    }
+
+    .lb-next {
+        right: 10px;
+    }
+}
+
+/* Prevenir scroll horizontal en móviles - IMPORTANTE */
+@media only screen and (max-width: 768px) {
+    html {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+        max-width: 100vw;
+        position: relative;
+    }
+
+    .hero,
+    .container,
+    .gallery-section,
+    .gallery-carousel,
+    .gallery-container,
+    .amenities,
+    .booking,
+    .site-footer {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Asegurar que ningún elemento sobresalga */
+    .carousel-background,
+    .carousel-container-3d,
+    .gallery-track,
+    .features-grid,
+    .amenities-grid {
+        max-width: 100%;
+    }
+}

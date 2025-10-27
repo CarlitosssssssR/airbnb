@@ -15,15 +15,38 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentPosition = 0;
     let currentLightboxIndex = 0;
     
-    // Calcular el ancho dinámicamente
+    // Detectar si es móvil
+    function isMobile() {
+        return window.innerWidth <= 480;
+    }
+    
+    function isTablet() {
+        return window.innerWidth > 480 && window.innerWidth <= 768;
+    }
+    
+    // Calcular el ancho dinámicamente según el dispositivo
     function calculateSlideWidth() {
         const containerWidth = track.parentElement.clientWidth;
-        const gap = 16;
-        return (containerWidth + gap) / 4; // 4 imágenes visibles
+        
+        if (isMobile()) {
+            return containerWidth; // 1 imagen en móviles pequeños
+        } else if (isTablet()) {
+            const gap = 10;
+            return (containerWidth + gap) / 2; // 2 imágenes en tablets
+        } else {
+            const gap = 16;
+            return (containerWidth + gap) / 4; // 4 imágenes en desktop
+        }
+    }
+    
+    function getSlidesToShow() {
+        if (isMobile()) return 1;
+        if (isTablet()) return 2;
+        return 4;
     }
     
     let slideWidth = calculateSlideWidth();
-    const slidesToShow = 4; // Siempre mostrar 4 imágenes
+    let slidesToShow = getSlidesToShow();
     
     function getMaxPosition() {
         return -(slides.length - slidesToShow) * slideWidth;
@@ -32,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Recalcular en resize
     window.addEventListener('resize', () => {
         slideWidth = calculateSlideWidth();
+        slidesToShow = getSlidesToShow();
         currentPosition = 0;
         updateSlidePosition();
     });
