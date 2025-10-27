@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Casa San Miguel - Experiencia Única en la Montaña</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <meta
+      name="description"
+      content="Disfruta de una estancia inolvidable en Casa San Miguel, con vistas panorámicas a la montaña, piscina privada y espacios únicos para tu descanso."
+    />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-inner">
+        <h1>Casa San Miguel</h1>
+                  <div class="carousel-background">
+            <div class="carousel-container-3d" id="mainCarousel">
+              <div class="slide slide-center" data-index="0">
+                <img
+                  src="images/photo1.jpeg"
+                  alt="Vista delantera de la casa"
+                  loading="eager"
+                  decoding="sync"
+                />
+              </div>
+              <div class="slide slide-right" data-index="1">
+                <img src="images/photo2.jpeg" alt="Sala de estar" loading="eager" decoding="sync" />
+              </div>
+              <div class="slide slide-hidden" data-index="2">
+                <img src="images/photo3.jpeg" alt="Habitación principal" loading="eager" decoding="sync" />
+              </div>
+              <div class="slide slide-left" data-index="3">
+                <img src="images/photo4.jpeg" alt="Habitación doble" loading="eager" decoding="sync" />
+              </div>
+            </div>
+          </div>
+        <p class="subtitle">
+          Un hogar diseñado para brindarte  comodidad, privacidad y un ambiente lleno de tranquilidad.
+        </p>
+        <a class="btn primary" href="#gallery">Descubre este paraíso</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="summary">
+        <div class="feature-highlights">
+          <h2>Una experiencia inolvidable</h2>
+          <div class="features-grid">
+            <div class="feature-item">
+              <h3>Pet Friendly</h3>
+              <p>Ven y diviertete junto a tu mascota</p>
+            </div>
+            <div class="feature-item">
+              <h3>Garage Privado</h3>
+              <p>Disponibilidad hasta 2 vehiculos</p>
+            </div>
+            <div class="feature-item">
+              <h3>Cocina</h3>
+              <p>Totalmente equipada para tu comodidad</p>
+            </div>
+            <div class="feature-item">
+              <h3>Amplios espacios</h3>
+              <p>Area recreativa, BQQ y piscina</p>
+            </div>
+          </div>
+          <div class="price-tag">
+            <span class="amount"><strong>$125 USD</strong> / noche</span>
+          </div>
+          <a class="btn" href="#book">Reservar ahora</a>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery-section">
+        <h2>Galería</h2>
+        <p>Desliza para ver más fotos o usa las flechas de navegación</p>
+        <div class="gallery-carousel">
+          <button class="gallery-nav prev" aria-label="Anterior">‹</button>
+          <div class="gallery-container">
+            <div class="gallery-track">
+              <div class="gallery-slide">
+                <img src="images/photo1.jpeg" alt="Exterior 1" loading="lazy" />
+              </div>
+              <div class="gallery-slide">
+                <img src="images/photo2.jpeg" alt="Sala y comedor" loading="lazy" />
+              </div>
+              <div class="gallery-slide">
+                <img src="images/photo3.jpeg" alt="Habitación principal" loading="lazy" />
+              </div>
+              <div class="gallery-slide">
+                <img src="images/photo4.jpeg" alt="Habitación doble" loading="lazy" />
+              </div>
+              <div class="gallery-slide">
+                <img src="images/photo5.jpeg" alt="Habitación sencilla" loading="lazy" />
+              </div>
+              <div class="gallery-slide">
+                <img src="images/photo6.jpg" alt="Piscina" loading="lazy" />
+              </div>
+              <div class="gallery-slide">
+                <img src="images/photo7.jpeg" alt="Patio y cancha" loading="lazy" />
+              </div>
+              <div class="gallery-slide">
+                <img src="images/photo8.jpeg" alt="Cocina" loading="lazy" />
+              </div>
+              <div class="gallery-slide">
+                <img src="images/photo9.jpeg" alt="Barbacoa" loading="lazy" />
+              </div>
+              <div class="gallery-slide">
+                <img src="images/photo10.jpeg" alt="Vistas de la montaña" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <button class="gallery-nav next" aria-label="Siguiente">›</button>
+        </div>
+      </section>
+
+      <section id="amenities" class="amenities">
+        <h2>Servicios exclusivos</h2>
+        <div class="amenities-grid">
+          <div class="amenity-card">
+            <h3>Wi-Fi de alta velocidad</h3>
+            <p>Conexión premium en toda la propiedad</p>
+          </div>
+          <div class="amenity-card">
+            <h3>Área de entretenimiento</h3>
+            <p>TV Smart, espacio deportivo y más</p>
+          </div>
+          <div class="amenity-card">
+            <h3>Cocina equipada</h3>
+            <p>Electrodomésticos premium y utensilios</p>
+          </div>
+          <div class="amenity-card">
+            <h3>Jardines</h3>
+            <p>Naturaleza, flores y frutas</p>
+          </div>
+          <div class="amenity-card">
+            <h3>Estacionamiento privado</h3>
+            <p>Espacio seguro para 2 vehículos</p>
+          </div>
+          <div class="amenity-card">
+            <h3>Comodidad y Confort</h3>
+            <p>Amplias habitaciones aptas para acoger a 9 personas</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="book" class="booking">
+        <div class="booking-card">
+          <h2>Reserva tu experiencia</h2>
+          <p class="booking-subtitle">
+            Vive momentos inolvidables en Casa San Miguel
+          </p>
+          <div class="booking-highlight">
+            <p class="price"><strong>$125 USD</strong> / noche</p>
+            <p class="booking-note">
+            </p>
+          </div>
+          <a
+            class="btn primary booking-btn"
+            href="mailto:reservas@casasanmiguel.com?subject=Reserva%20Casa%20San%20Miguel"
+            >Consultar disponibilidad</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Casa de Montaña — Fotos de la propiedad</p>
+    </footer>
+
+    <!-- Lightbox modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lb-close" aria-label="Cerrar">✕</button>
+      <button class="lb-prev" aria-label="Anterior">‹</button>
+      <div class="lb-content">
+        <img id="lbImage" src="" alt="" />
+        <p id="lbCaption"></p>
+      </div>
+      <button class="lb-next" aria-label="Siguiente">›</button>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="gallery.js"></script>
+
+  </body>
+</html>
