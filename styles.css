@@ -231,11 +231,11 @@ body {
 .gallery-track {
   display: flex;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  gap: 20px;
+  gap: 16px;
 }
 
 .gallery-slide {
-  flex: 0 0 300px;
+  flex: 0 0 calc((100% - 48px) / 4);
   height: 400px;
   border-radius: var(--radius);
   overflow: hidden;
@@ -244,6 +244,10 @@ body {
   box-shadow: var(--shadow);
   transition: var(--transition);
   border: 2px solid rgba(255, 255, 255, 0.8);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .gallery-slide:hover {
@@ -256,6 +260,16 @@ body {
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  pointer-events: none;
+  -webkit-touch-callout: none;
 }
 
 .gallery-slide:hover img {
@@ -518,6 +532,14 @@ body {
         cursor: grab;
         border-radius: var(--radius);
         border: 3px solid rgba(255, 255, 255, 0.9);
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
     }
 
     .slide:active {
@@ -529,6 +551,15 @@ body {
         height: 100%;
         object-fit: cover;
         user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        pointer-events: none;
+        -webkit-touch-callout: none;
     }
     
     .slide-center {

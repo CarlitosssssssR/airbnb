@@ -14,15 +14,34 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let currentPosition = 0;
     let currentLightboxIndex = 0;
-    const slideWidth = 320; // 300px width + 20px gap
-    const slidesToShow = Math.floor(track.parentElement.clientWidth / slideWidth);
-    const maxPosition = -(slides.length - slidesToShow) * slideWidth;
+    
+    // Calcular el ancho dinámicamente
+    function calculateSlideWidth() {
+        const containerWidth = track.parentElement.clientWidth;
+        const gap = 16;
+        return (containerWidth + gap) / 4; // 4 imágenes visibles
+    }
+    
+    let slideWidth = calculateSlideWidth();
+    const slidesToShow = 4; // Siempre mostrar 4 imágenes
+    
+    function getMaxPosition() {
+        return -(slides.length - slidesToShow) * slideWidth;
+    }
+    
+    // Recalcular en resize
+    window.addEventListener('resize', () => {
+        slideWidth = calculateSlideWidth();
+        currentPosition = 0;
+        updateSlidePosition();
+    });
 
     function updateSlidePosition() {
         track.style.transform = `translateX(${currentPosition}px)`;
     }
 
     function handleNext() {
+        const maxPosition = getMaxPosition();
         if (currentPosition > maxPosition) {
             currentPosition -= slideWidth;
             updateSlidePosition();
